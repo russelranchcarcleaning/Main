@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Folsom Ranch Detail Co. | Premium Auto Detailing in Folsom, CA</title>
+  <meta name="description" content="Folsom Ranch Detail Co. provides professional auto detailing in Folsom, CA and surrounding areas. Mobile service — we come to you. Get a free quote today." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://folsomranchdetail.com" />
+  <meta property="og:title" content="Folsom Ranch Detail Co. | Premium Auto Detailing in Folsom, CA" />
+  <meta property="og:description" content="Professional mobile auto detailing in Folsom Ranch, Granite Bay, Roseville, and El Dorado Hills. We come to you." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#FFFFFF" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; scroll-padding-top: 80px; }
+    body {
+      background: #FFFFFF;
+      color: #151515;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    input, select, textarea { font-family: inherit; }
+
+    /* ─── Design Tokens ─── */
+    :root {
+      --primary: #1A1A2E;
+      --accent: #C9A84C;
+      --accent-light: rgba(201,168,76,0.12);
+      --accent-border: rgba(201,168,76,0.25);
+      --text-muted: #6B7280;
+      --surface: #F8F9FA;
+      --border: #E8EAED;
+      --radius-card: 20px;
+      --radius-btn: 100px;
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(0.9); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    .fade-up { animation: fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) both; }
+    .d1 { animation-delay: 0.06s; }
+    .d2 { animation-delay: 0.14s; }
+    .d3 { animation-delay: 0.22s; }
+    .d4 { animation-delay: 0.30s; }
+    .d5 { animation-delay: 0.38s; }
+    .d6 { animation-delay: 0.46s; }
+
+    /* ─── Navbar ─── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s;
+    }
+    .navbar.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-text {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-outline-sm {
+      padding: 9px 20px;
+      border-radius: var(--radius-btn);
+      border: 1.5px solid var(--border);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+    .btn-outline-sm:hover { border-color: var(--accent); background: var(--accent-light); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 15px 34px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(26,26,46,0.35);
+      background: #0D0D1F;
+    }
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 3px 10px rgba(26,26,46,0.2);
+    }
+    .btn-primary .arrow {
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 15px 34px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-accent:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(201,168,76,0.4);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: var(--radius-btn);
+      padding: 13px 30px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Section Wrapper ─── */
+    .section {
+      padding: 96px 24px;
+    }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 90px 24px 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10,10,28,0.72) 0%,
+        rgba(10,10,28,0.55) 50%,
+        rgba(10,10,28,0.80) 100%
+      );
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 8px 20px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(12px);
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: float 2.5s ease-in-out infinite;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 8vw, 64px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    }
+    .hero h1 .highlight {
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .hero-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 7px 18px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero-stats {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+    .hero-stat {
+      text-align: center;
+      color: #fff;
+    }
+    .hero-stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      display: block;
+    }
+    .hero-stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+    }
+
+    /* ─── Trust bar ─── */
+    .trust-bar {
+      background: var(--primary);
+      padding: 18px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+    .trust-item svg { color: var(--accent); flex-shrink: 0; }
+    .trust-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+
+    /* ─── Services ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s, border-color 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-border);
+    }
+    .service-card-img {
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .service-card:hover .service-card-img img { transform: scale(1.05); }
+    .service-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+    .service-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .service-card-body h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .service-card-body p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .service-card-body .btn-primary {
+      margin-top: auto;
+      padding: 13px 28px;
+      font-size: 14px;
+    }
+
+    /* ─── Why Us ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 0;
+    }
+    .why-left { position: sticky; top: 96px; }
+    .why-image {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-top: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+    .why-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .feature-item {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .feature-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-border);
+      background: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .feature-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .feature-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ─── How It Works ─── */
+    .how-bg {
+      background: var(--surface);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      position: relative;
+    }
+    .steps-connector {
+      position: absolute;
+      top: 30px;
+      left: calc(16.67% + 30px);
+      right: calc(16.67% + 30px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-border));
+    }
+    .step-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+    }
+    .step-num {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+    }
+    .step-card:hover .step-num {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 8px var(--accent-light);
+    }
+    .step-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .step-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── Quote Form ─── */
+    .quote-section { background: var(--primary); }
+    .quote-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .quote-left h2 { color: #fff; margin-bottom: 20px; }
+    .quote-left .section-label { color: var(--accent); }
+    .quote-left p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .quote-trust-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .quote-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+    .quote-trust-item svg { color: var(--accent); flex-shrink: 0; }
+    .quote-form-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+    }
+    .form-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .form-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-field label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #444;
+      letter-spacing: 0.03em;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 14px;
+      color: var(--primary);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-light);
+      background: #fff;
+    }
+    .form-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C9A84C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 44px;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 15px;
+    }
+
+    /* ─── Testimonials ─── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .review-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s, border-color 0.2s;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      border-color: var(--accent-border);
+    }
+    .stars { display: flex; gap: 3px; }
+    .review-text {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--accent-border);
+    }
+    .reviewer-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .reviewer-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .reviewer-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .review-source {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    /* ─── Service Area ─── */
+    .area-bg { background: var(--surface); }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .area-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .area-tag:hover { border-color: var(--accent); background: var(--accent-light); }
+    .area-tag svg { color: var(--accent); }
+    .area-map {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+      height: 400px;
+    }
+    .area-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list {
+      max-width: 720px;
+      margin: 48px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--accent-border); }
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 16px;
+      text-align: left;
+    }
+    .faq-trigger:hover { background: var(--accent-light); }
+    .faq-question {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .faq-chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+    }
+    .faq-item.open .faq-chevron svg { color: #fff; }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .faq-body-inner {
+      padding: 0 24px 22px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ─── CTA Banner ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #2D2D4E 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.06;
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: 5%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.04;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-content h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .cta-content p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #0A0A1E;
+      color: rgba(255,255,255,0.65);
+      padding: 64px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-text { color: #fff; }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 260px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; }
+    .footer-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ─── Scroll Progress ─── */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #e8c060);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ─── Mobile Menu ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,30,0.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .mobile-menu a {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.03em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-left { position: static; }
+      .quote-inner { grid-template-columns: 1fr; gap: 40px; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .area-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 36px; }
+      .hero-stats { gap: 20px; }
+      .hero-stat-num { font-size: 22px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .steps-connector { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-divider { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .section { padding: 72px 20px; }
+      .quote-form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Close menu">✕</button>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#why-us" onclick="closeMobileMenu()">Why Us</a>
+  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#quote" class="btn-accent" style="font-size:17px;padding:14px 32px;border-radius:100px;" onclick="closeMobileMenu()">Get Free Quote</a>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="logo" aria-label="Folsom Ranch Detail Co. home">
+      <div class="logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 17H5a2 2 0 0 1 0-4l1.5-6h11L19 13a2 2 0 0 1 0 4Z"/>
+          <circle cx="7.5" cy="17.5" r="1.5"/>
+          <circle cx="16.5" cy="17.5" r="1.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">Folsom Ranch <span>Detail Co.</span></div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="tel:9169258303" class="btn-outline-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;vertical-align:-1px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.43 2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        (916) 925-8303
+      </a>
+      <a href="#quote" class="btn-primary" style="padding:11px 24px;font-size:14px;">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img
+      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=90"
+      alt="Premium auto detailing in Folsom Ranch"
+      loading="eager"
+    />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <div class="hero-badge-dot"></div>
+      Now Serving Folsom Ranch & Surrounding Areas
+    </div>
+
+    <h1 class="fade-up d1">
+      Premium Auto Detailing<br />
+      in <span class="highlight">Folsom Ranch</span>
+    </h1>
+
+    <p class="hero-sub fade-up d2">
+      Showroom-quality results, delivered to your driveway.
+    </p>
+    <p class="hero-sub fade-up d2" style="font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:6px;">
+      Proudly serving the Folsom Ranch community
+    </p>
+
+    <div class="hero-trust fade-up d3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+      We Come to You — No Drop-Off Required
+    </div>
+
+    <div class="hero-actions fade-up d4">
+      <a href="#quote" class="btn-accent" id="hero-cta-book">
+        Book My Detail
+        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="tel:9169258303" class="btn-ghost" id="hero-cta-call">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.43 2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        Call Now — (916) 925-8303
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats fade-up d6">
+    <div class="hero-stat">
+      <span class="hero-stat-num">5★</span>
+      <span class="hero-stat-label">Average Rating</span>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">1.5+</span>
+      <span class="hero-stat-label">Years Local</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TRUST BAR ═══════════════════ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Fully Insured
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      100% Satisfaction Guarantee
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Same-Day Appointments Available
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+      No Hidden Fees
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SERVICES ═══════════════════ -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+      Our Services
+    </div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px;">
+      <h2 class="section-title">Every Service, <br/>Done Right.</h2>
+      <a href="#quote" class="btn-primary" style="padding:12px 26px;font-size:14px;">Get a Free Quote</a>
+    </div>
+    <p class="section-sub">Professional-grade products. Meticulous attention to detail. Results that speak for themselves.</p>
+
+    <div class="services-grid" id="services-grid">
+      <!-- Interior Detail -->
+      <div class="service-card" data-obs>
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1603921326210-6ded2a9c4e56?w=800&q=80&auto=format" alt="Interior auto detailing" loading="lazy" />
+          <div class="service-badge">Popular</div>
+        </div>
+        <div class="service-card-body">
+          <h3>Interior Detail</h3>
+          <p>Deep vacuum, steam-clean seats and panels, leather conditioning, and odor elimination. Your cabin comes out fresh, clean, and like new.</p>
+          <p style="font-size:18px;font-weight:800;color:var(--accent);margin-bottom:4px;">Starting at $65</p>
+          <a href="#quote" class="btn-primary" id="interior-detail-cta">
+            Get Quote
+            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Exterior Detail -->
+      <div class="service-card" data-obs>
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format" alt="Exterior car detailing hand wash" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3>Exterior Detail</h3>
+          <p>Hand wash, clay bar treatment, polish, sealant, and tire & trim dressing. Your paint looks protected and your wheels shine sharp.</p>
+          <p style="font-size:18px;font-weight:800;color:var(--accent);margin-bottom:4px;">Starting at $50</p>
+          <a href="#quote" class="btn-primary" id="exterior-detail-cta">
+            Get Quote
+            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Full Detail -->
+      <div class="service-card" data-obs>
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80&auto=format" alt="Full car detail service" loading="lazy" />
+          <div class="service-badge">Best Value</div>
+        </div>
+        <div class="service-card-body">
+          <h3>Full Detail</h3>
+          <p>Complete interior + exterior package in one visit. The most popular option for customers who want a true showroom finish.</p>
+          <p style="font-size:18px;font-weight:800;color:var(--accent);margin-bottom:4px;">Starting at $100</p>
+          <a href="#quote" class="btn-primary" id="full-detail-cta">
+            Get Quote
+            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ WHY US ═══════════════════ -->
+<section class="section" id="why-us" style="background:var(--surface);">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-left">
+        <div class="section-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Why Choose Us
+        </div>
+        <h2 class="section-title">The Folsom Ranch<br />Detail Difference</h2>
+        <p class="section-sub">We're not a franchise or a drive-through wash. We're a locally owned team that lives in this community — and we treat every car like our own.</p>
+        <div class="why-image">
+          <img
+            src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=900&q=85&auto=format"
+            alt="Professional detailer at work on a car"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>We Come to You</h4>
+            <p>No drop-off, no waiting rooms. We bring our full setup to your home, office, or anywhere that works for you.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Folsom Ranch Locals</h4>
+            <p>We're part of this community. You'll see our truck at Folsom Lake, Prairie Oaks, and right on your street — not a 1-800 number away.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Transparent, Flat Pricing</h4>
+            <p>You'll know the exact price before we start. No upsells, no surprises. Pay only when the work is done and you're happy.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Professional-Grade Products</h4>
+            <p>We use industry-leading compounds, coatings, and tools — the same products detailers use on Ferraris and show cars.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Before & After Photos</h4>
+            <p>We document every job with before/after photos so you can see the full transformation — and share it if you're proud (most people are).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+<section class="section how-bg" id="how">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="section-label" style="justify-content:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        How It Works
+      </div>
+      <h2 class="section-title" style="text-align:center;margin:0 auto 12px;">Book in 3 Easy Steps</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">We handle the details. You enjoy the results.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="steps-connector"></div>
+
+      <div class="step-card" data-obs>
+        <div class="step-num">1</div>
+        <div>
+          <h3>Tell Us About Your Vehicle</h3>
+          <p>Fill out our quick quote form. Tell us your car type, what service you need, and where you're located in Folsom Ranch.</p>
+        </div>
+      </div>
+
+      <div class="step-card" data-obs>
+        <div class="step-num">2</div>
+        <div>
+          <h3>We Show Up — Fully Equipped</h3>
+          <p>Pick a time that works. We arrive ready to go — we use your water and power supply to deliver professional results.</p>
+        </div>
+      </div>
+
+      <div class="step-card" data-obs>
+        <div class="step-num">3</div>
+        <div>
+          <h3>Drive Away Impressed</h3>
+          <p>We send before & after photos, walk you through the results, and only collect payment once you're 100% satisfied.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="#quote" class="btn-primary" id="how-cta">
+        Book My Detail Now
+        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ QUOTE FORM ═══════════════════ -->
+<section class="section quote-section" id="quote">
+  <div class="section-inner">
+    <div class="quote-inner">
+      <div class="quote-left">
+        <div class="section-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          Free Quote
+        </div>
+        <h2 class="section-title" style="color:#fff;">Get Your Free Quote<br />in Under 2 Minutes</h2>
+        <p>No obligation, no pressure. Just tell us about your vehicle and we'll send you a precise quote — usually within the hour.</p>
+        <div class="quote-trust-items">
+          <div class="quote-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Free, no-obligation quote
+          </div>
+          <div class="quote-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Same-day & weekend appointments
+          </div>
+          <div class="quote-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Serving all of Folsom Ranch & beyond
+          </div>
+          <div class="quote-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Pay only when you're satisfied
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-form-card" style="padding: 10px; min-height: 750px; display: flex; flex-direction: column; overflow: hidden; background: #fff;">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdQZ9nCu88VXUxtfYztYDPXHzW_dsZd0-q8aqHWPHY9UvWKWg/viewform?embedded=true" 
+          width="100%" 
+          height="800" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          style="border: none; border-radius: 12px; width: 100%; flex-grow: 1;"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ REVIEWS ═══════════════════ -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Customer Reviews
+      </div>
+      <h2 class="section-title" style="text-align:center;margin:0 auto 12px;">What Folsom Ranch Customers Say</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Real reviews from real neighbors.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Review 1 — Interior Detail -->
+      <div class="review-card" data-obs>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"My 2022 Suburban had 3 years of kids living in it — crumbs everywhere, sticky cup holders, stained seats. The interior detail had it looking and smelling brand new. I was seriously amazed. Would book again in a heartbeat."</p>
+        <div class="reviewer">
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:800;color:var(--accent);">
+            R.M.
+          </div>
+          <div>
+            <div class="reviewer-name">R.M.</div>
+            <div class="reviewer-meta">Folsom Ranch, CA &bull; Interior Detail</div>
+          </div>
+        </div>
+        <div class="review-source">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Verified Google Review
+        </div>
+      </div>
+
+      <!-- Review 2 — Exterior Detail -->
+      <div class="review-card" data-obs>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Got the exterior detail before a road trip and the car looked better than when I bought it. The clay bar treatment made the paint feel like glass. Great attention to detail on the wheels and trim too. Super easy to schedule."</p>
+        <div class="reviewer">
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:800;color:var(--accent);">
+            S.K.
+          </div>
+          <div>
+            <div class="reviewer-name">S.K.</div>
+            <div class="reviewer-meta">Folsom Ranch, CA &bull; Exterior Detail</div>
+          </div>
+        </div>
+        <div class="review-source">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Verified Google Review
+        </div>
+      </div>
+
+      <!-- Review 3 — Full Detail -->
+      <div class="review-card" data-obs>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Booked the full detail on my Ram 1500 and they knocked it out of the park — inside and out. Showed up on time, did a thorough walkthrough when finished, and the before & after photos blew me away. Highly recommend to anyone in Folsom Ranch."</p>
+        <div class="reviewer">
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:800;color:var(--accent);">
+            M.T.
+          </div>
+          <div>
+            <div class="reviewer-name">M.T.</div>
+            <div class="reviewer-meta">Folsom Ranch, CA &bull; Full Detail</div>
+          </div>
+        </div>
+        <div class="review-source">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Verified Google Review
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SERVICE AREA ═══════════════════ -->
+<section class="section area-bg" id="area">
+  <div class="section-inner">
+    <div class="area-grid">
+      <div>
+        <div class="section-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Service Area
+        </div>
+        <h2 class="section-title">Proudly Serving<br />Folsom Ranch</h2>
+        <p class="section-sub">We are a Folsom Ranch-based detailing service. We come directly to your home or driveway — no need to drive anywhere. Our service area is focused exclusively on the Folsom Ranch community.</p>
+
+        <div class="area-tags">
+          <div class="area-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Folsom Ranch, CA
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#quote" class="btn-primary" id="area-cta">Book My Detail →</a>
+        </div>
+      </div>
+
+      <div class="area-map">
+        <iframe
+          title="Folsom Ranch service area map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99533.77392799407!2d-121.16760439082!3d38.70820847098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809adedec8db79c7%3A0x31b80d9e8eff0ae3!2sFolsom%2C%20CA!5e0!3m2!1sen!2sus!4v1716000000000!5m2!1sen!2sus"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        FAQ
+      </div>
+      <h2 class="section-title" style="text-align:center;margin:0 auto 12px;">Common Questions</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Everything you need to know before booking.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" id="faq-1">
+        <button class="faq-trigger" onclick="toggleFaq('faq-1')" aria-expanded="false">
+          <span class="faq-question">Do I need to be home when you detail my car?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Nope! As long as we have access to the vehicle and a parking spot, we can handle the whole job while you're at work or running errands. We'll text you when we start and when we're done, along with your before & after photos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-2">
+        <button class="faq-trigger" onclick="toggleFaq('faq-2')" aria-expanded="false">
+          <span class="faq-question">How long does a full detail take?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">A full detail (interior + exterior) typically takes 3–5 hours depending on vehicle size and condition. Sedans tend to run around 3 hours; SUVs and trucks are closer to 4–5. We'll give you a time estimate with your quote.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-3">
+        <button class="faq-trigger" onclick="toggleFaq('faq-3')" aria-expanded="false">
+          <span class="faq-question">Do you bring your own water and electricity?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">No — we use the client's water and electricity. We'll need access to an outdoor hose spigot and a standard electrical outlet at your location. Most homes in Folsom Ranch have both right in the driveway, so this is rarely an issue. Just give us a heads-up if access is limited and we'll work around it.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-4">
+        <button class="faq-trigger" onclick="toggleFaq('faq-4')" aria-expanded="false">
+          <span class="faq-question">How much does a detail cost?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Pricing depends on vehicle size and the service you choose. As a general guide: exterior details start at $50, interior details at $65, and full details at $100. Submit a quote request and we'll give you an exact number within the hour — no obligation.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-5">
+        <button class="faq-trigger" onclick="toggleFaq('faq-5')" aria-expanded="false">
+          <span class="faq-question">Do you offer a satisfaction guarantee?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Absolutely. We don't consider the job done until you're happy. If you find something we missed or aren't satisfied with any aspect of the work, we'll come back and fix it at no charge. Your satisfaction is our reputation.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-6">
+        <button class="faq-trigger" onclick="toggleFaq('faq-6')" aria-expanded="false">
+          <span class="faq-question">Can you remove pet hair from my car?</span>
+          <div class="faq-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">No, pet hair removal is not a service we currently offer. If your vehicle has heavy pet hair, we may not be the right fit — but we're happy to chat before you book so we can set the right expectations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA BANNER ═══════════════════ -->
+<section class="section cta-banner">
+  <div class="section-inner">
+    <div class="cta-content">
+      <div class="section-label" style="justify-content:center;color:var(--accent);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        Limited Spots This Week
+      </div>
+      <h2>Your Car Deserves the Best.<br />Book Today.</h2>
+      <p>Join hundreds of Folsom Ranch neighbors who drive a car they're proud of. Same-day and weekend appointments available.</p>
+      <div class="cta-actions">
+        <a href="#quote" class="btn-accent" id="cta-book">
+          Get Free Quote
+          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="tel:9169258303" class="btn-ghost" id="cta-call">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.43 2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          (916) 925-8303
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:4px;" aria-label="Folsom Ranch Detail Co.">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17H5a2 2 0 0 1 0-4l1.5-6h11L19 13a2 2 0 0 1 0 4Z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+          </div>
+          <div class="logo-text">Folsom Ranch <span>Detail Co.</span></div>
+        </a>
+        <p>Premium mobile auto detailing serving Folsom Ranch and the greater Sacramento area. We bring the showroom to your driveway.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a class="social-btn" href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a class="social-btn" href="#" aria-label="Google">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Interior Detail</a></li>
+          <li><a href="#services">Exterior Detail</a></li>
+          <li><a href="#services">Full Detail</a></li>
+          <li><a href="#services">Paint Correction</a></li>
+          <li><a href="#services">Ceramic Coating</a></li>
+          <li><a href="#services">Engine Bay Detail</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#why-us">About Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#quote">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:9169258303">(916) 925-8303</a></li>
+          <li><a href="mailto:hello@folsomranchdetail.com">hello@folsomranchdetail.com</a></li>
+          <li style="color:rgba(255,255,255,0.45);font-size:14px;">Folsom Ranch, CA 95630</li>
+          <li style="color:rgba(255,255,255,0.45);font-size:14px;">Mon–Sat: 7am – 7pm</li>
+          <li style="color:rgba(255,255,255,0.45);font-size:14px;">Sun: 8am – 5pm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Folsom Ranch Detail Co. All rights reserved.</p>
+      <div class="footer-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured &amp; Locally Owned
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+
+  // ─── Navbar scroll ───
+  const navbar = document.getElementById('navbar');
+  const scrollProgress = document.getElementById('scrollProgress');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+    navbar.classList.toggle('scrolled', scrollTop > 20);
+  }, { passive: true });
+
+  // ─── Mobile menu ───
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  closeMenu.addEventListener('click', closeMobileMenu);
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ─── FAQ accordion ───
+  function toggleFaq(id) {
+    const item = document.getElementById(id);
+    const body = item.querySelector('.faq-body');
+    const trigger = item.querySelector('.faq-trigger');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-body').style.maxHeight = '0';
+      el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle clicked
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+
+
+  // ─── Scroll-triggered fade-in for cards ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '0';
+        entry.target.style.transform = 'translateY(24px)';
+        setTimeout(() => {
+          entry.target.style.transition = 'opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('[data-obs]').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+
+  // ─── Smooth scroll for anchor links ───
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
